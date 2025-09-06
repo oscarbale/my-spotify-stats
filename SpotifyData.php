@@ -21,7 +21,7 @@ class SpotifyData
         foreach ($all_files as $file) {
             $info = pathinfo($file);
             if ($info['extension'] == 'json' && str_contains($info['filename'], 'Streaming_History') && file_exists('data/' . $file)) {
-                $file_contents = json_decode(file_get_contents('data/' . $file));
+                $file_contents = json_decode(file_get_contents('data/' . $file), true);
                 if (is_array($file_contents)) {
                     $all_file_contents = array_merge($all_file_contents, $file_contents);
                 }
