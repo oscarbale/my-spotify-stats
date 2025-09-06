@@ -7,6 +7,15 @@ class SpotifyData
     public function __construct()
     {
         ini_set('memory_limit', '-1'); // temporary measure to prevent errors during development
+
+        $this->raw_json_data = SpotifyData::get_raw_json_data();
+    }
+
+    /**
+     * Reads in all the relevant JSON data from the `/data` directory
+     * @return array
+     */
+    public static function get_raw_json_data(): array{
         $all_files = scandir('data');
         $all_file_contents = [];
         foreach ($all_files as $file) {
@@ -18,6 +27,6 @@ class SpotifyData
                 }
             }
         }
-        $this->raw_json_data = $all_file_contents;
+        return $all_file_contents;
     }
 }
