@@ -73,9 +73,7 @@ class SpotifySong
     }
 
     /**
-     * Updates counts of the current instance of SpotifySong to match $song, intended use is if the same song is added
-     * to SpotifyAlbum or SpotifyArtist the state can be updated in a single function call rather than with individual
-     * calls to inc functions
+     * Updates counts of the current instance of SpotifySong to match $song, intended use is if the same song is added to SpotifyAlbum or SpotifyArtist the state can be updated in a single function call rather than with individual calls to inc functions (function won't do anything if $song->track_id doesn't match $this
      * @param SpotifySong $song
      * @return void
      */
