@@ -80,10 +80,12 @@ class SpotifySong
      * @return void
      */
     public function update_state(SpotifySong $song): void{
+        if ($this->track_id == $song->track_id){
         $this->times_played = $song->times_played;
         $this->times_played_completely = $song->times_played_completely;
         $this->times_skipped = $song->times_skipped;
         $this->play_history = $song->play_history;
+        }
     }
 
 }
