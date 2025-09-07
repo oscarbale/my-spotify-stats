@@ -38,4 +38,18 @@ class SpotifyAlbum extends SpotifyBaseStats
         }
     }
 
+    /**
+     * Updates the stats of the album based on the songs it contains, has to be done after all songs have been added
+     * and updated
+     * @return void
+     */
+    public function update_album_stats(): void{
+        // The album can only be played as many times as the least played song
+        $song_times_played = [];
+        foreach ($this->songs as $song){
+            $song_times_played[$song->name] = $song->times_played;
+        }
+        $this->times_played = min($song_times_played);
+    }
+
 }

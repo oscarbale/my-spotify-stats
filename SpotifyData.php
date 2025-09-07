@@ -121,6 +121,10 @@ class SpotifyData
             }
         }
 
+        foreach ($this->albums as $album) {
+            $album->update_album_stats();
+        }
+
         /*
         echo "<h1>Artist Data</h1>";
         echo "Artist Name: " . $this->artists['Radiohead']->name . "<br>";
