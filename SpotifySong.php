@@ -5,11 +5,7 @@ include_once ('SpotifyArtist.php');
 
 class SpotifySong extends SpotifyBaseStats
 {
-    public int $track_id {
-        get {
-            return $this->track_id;
-        }
-    }
+    public int $track_id;
     public string $name;
     public SpotifyArtist $artist;
 
