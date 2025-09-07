@@ -4,8 +4,8 @@ This repository is a simple php script that'll format your data requested from s
 ## Prerequisites 
 You need to have PHP setup on your machine, as this project utilises PHP's built-in web server
 
-You will also need a copy of your listening data from spotify, see information on how to request that information [here](https://support.spotify.com/uk/article/data-rights-and-privacy-settings/) <br>
-*Note: This script will only process "Your Extended streaming history" so only include this in `/data`*
+You will also need a copy of your listening data from spotify, see information on how to request that information [here](https://support.spotify.com/uk/article/data-rights-and-privacy-settings/) 
+(*Note: This script will only process "Your Extended streaming history" so only include this in `/data`*)
 
 ## How to run 
 You'll need to have PHP setup on your device, then simply clone this repository and place the files from your data
