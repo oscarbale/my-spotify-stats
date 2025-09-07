@@ -34,7 +34,7 @@ class SpotifyAlbum extends SpotifyBaseStats
             $this->songs[$song->name] = $song;
         }
         else{
-            $this->songs[$song->name]->update_state($song);
+            $this->update_spotify_song($song);
         }
     }
 

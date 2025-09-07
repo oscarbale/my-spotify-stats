@@ -115,8 +115,8 @@ class SpotifyData
                 $this->albums[$album_name]->add_song($this->songs[$song_name]);
 
                 // Update SpotifyArtists in SpotifySongs and SpotifyAlbums
-                $this->songs[$song_name]->artist->update_state($this->artists[$artist_name]);
-                $this->albums[$album_name]->artist->update_state($this->artists[$artist_name]);
+                $this->songs[$song_name]->update_spotify_artist($this->artists[$artist_name]);
+                $this->albums[$album_name]->update_spotify_artist($this->artists[$artist_name]);
 
             }
         }

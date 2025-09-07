@@ -51,20 +51,37 @@ class SpotifyBaseStats
     }
 
     /**
-     * Updates counts of the current instance to match $obj, if it's SpotifySong then the `track_id` will be compared
-     * @param SpotifyArtist|SpotifyAlbum|SpotifySong $obj
+     * Updates $this->artist with the passed SpotifyArtist instance if $this is a SpotifySong or SpotifyAlbum
+     * @param SpotifyArtist $artist
      * @return void
      */
-    public function update_state(SpotifyArtist|SpotifyAlbum|SpotifySong $obj): void{
-        $current_class = get_class($this);
-        if ($obj instanceof $current_class) {
-            if (($current_class == "SpotifySong" && $this->track_id == $obj->track_id) || ($current_class == "SpotifyAlbum" || $current_class == "SpotifyArtist")) {
-                $this->times_played = $obj->times_played;
-                $this->times_played_completely = $obj->times_played_completely;
-                $this->times_skipped = $obj->times_skipped;
-                $this->play_history = $obj->play_history;
-            }
+    public function update_spotify_artist(SpotifyArtist $artist): void{
+        if ($this instanceof SpotifySong || $this instanceof SpotifyAlbum) {
+            $this->artist = $artist;
         }
     }
+
+    /**
+     * Updates $this->albums with the passed SpotifyAlbum instance if $this is a SpotifyArtist
+     * @param SpotifyAlbum $album
+     * @return void
+     */
+    public function update_spotify_album(SpotifyAlbum $album): void{
+        if ($this instanceof SpotifyArtist) {
+            $this->albums[$album->album_name] = $album;
+        }
+    }
+
+    /**
+     * Updates $this->songs with the passed SpotifySong instance if $this is a SpotifyArtist or SpotifyAlbum
+     * @param SpotifySong $song
+     * @return void
+     */
+    public function update_spotify_song(SpotifySong $song): void{
+        if ($this instanceof SpotifyArtist || $this instanceof SpotifyAlbum) {
+            $this->songs[$song->name] = $song;
+        }
+    }
+
 
 }

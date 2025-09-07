@@ -38,7 +38,7 @@ class SpotifyArtist extends SpotifyBaseStats
             $this->songs[$song_name] = $song;
         }
         else{
-            $this->songs[$song_name]->update_state($song);
+            $this->update_spotify_song($song);
         }
 
     }
@@ -54,7 +54,7 @@ class SpotifyArtist extends SpotifyBaseStats
             $this->albums[$album_name] = $album;
         }
         else{
-            $this->albums[$album_name]->update_state($album);
+            $this->update_spotify_album($album);
         }
     }
 }
