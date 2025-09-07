@@ -24,6 +24,11 @@ class SpotifyAlbum extends SpotifyBaseStats
         $this->play_history = [];
     }
 
+    /**
+     * Add SpotifySong to $this->songs array
+     * @param SpotifySong $song
+     * @return void
+     */
     public function add_song(SpotifySong $song): void{
         if (!in_array($song->name, array_keys($this->songs))){
             $this->songs[$song->name] = $song;
