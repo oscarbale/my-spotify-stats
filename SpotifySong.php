@@ -33,18 +33,6 @@ class SpotifySong extends SpotifyBaseStats
     }
 
 
-    /**
-     * Updates counts of the current instance of SpotifySong to match $song, intended use is if the same song is added to SpotifyAlbum or SpotifyArtist the state can be updated in a single function call rather than with individual calls to inc functions (function won't do anything if $song->track_id doesn't match $this
-     * @param SpotifySong $song
-     * @return void
-     */
-    public function update_state(SpotifySong $song): void{
-        if ($this->track_id == $song->track_id){
-            $this->times_played = $song->times_played;
-            $this->times_played_completely = $song->times_played_completely;
-            $this->times_skipped = $song->times_skipped;
-            $this->play_history = $song->play_history;
-        }
-    }
+
 
 }

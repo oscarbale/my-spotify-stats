@@ -1,5 +1,10 @@
 <?php
 
+include_once('SpotifySong.php');
+include_once('SpotifyArtist.php');
+include_once('SpotifyAlbum.php');
+
+
 class SpotifyBaseStats
 {
     public int $times_played;
@@ -43,6 +48,23 @@ class SpotifyBaseStats
             'date' => $ts_string[0],
             'time' => $ts_string[1],
         ];
+    }
+
+    /**
+     * Updates counts of the current instance to match $obj, if it's SpotifySong then the `track_id` will be compared
+     * @param SpotifyArtist|SpotifyAlbum|SpotifySong $obj
+     * @return void
+     */
+    public function update_state(SpotifyArtist|SpotifyAlbum|SpotifySong $obj): void{
+        $current_class = get_class($this);
+        if ($obj instanceof $current_class) {
+            if (($current_class == "SpotifySong" && $this->track_id == $obj->track_id) || ($current_class == "SpotifyAlbum" || $current_class == "SpotifyArtist")) {
+                $this->times_played = $obj->times_played;
+                $this->times_played_completely = $obj->times_played_completely;
+                $this->times_skipped = $obj->times_skipped;
+                $this->play_history = $obj->play_history;
+            }
+        }
     }
 
 }
