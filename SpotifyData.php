@@ -120,6 +120,43 @@ class SpotifyData
 
             }
         }
+
+        /*
+        echo "<h1>Artist Data</h1>";
+        echo "Artist Name: " . $this->artists['Radiohead']->name . "<br>";
+        echo "Songs: " . json_encode(array_keys($this->artists['Radiohead']->songs)) . "<br>";
+        echo "Albums: " . json_encode(array_keys($this->artists['Radiohead']->albums)) . "<br>";
+        echo "Times Played: " . $this->artists['Radiohead']->times_played . "<br>";
+        echo "Times Played Completely: " . $this->artists['Radiohead']->times_played_completely . "<br>";
+        echo "Times Skipped: " . $this->artists['Radiohead']->times_skipped . "<br>";
+        echo "Play History: " . (count($this->artists['Radiohead']->play_history)) . "<br>";
+
+
+        echo "<h1>Album Data</h1>";
+        echo "Album Name: " . $this->albums['OK Computer']->album_name . "<br>";
+        echo "<h2>Album Artist Data:</h2>";
+        echo "Artist Name: " . $this->albums['OK Computer']->artist->name . "<br>";
+        echo "Songs: " . (count($this->albums['OK Computer']->artist->songs)) . "<br>";
+        echo "Albums: " . (count($this->albums['OK Computer']->artist->albums)) . "<br>";
+        echo "<h2>Album Songs Data:</h2>";
+        foreach ($this->albums['OK Computer']->songs as $song){
+            echo "Song Name: " . $song->name . "<br>";
+            echo "Artist Name: " . $song->artist->name . "<br>";
+            echo "Times Played: " . $song->times_played . "<br>";
+            echo "Times Played Completely: " . $song->times_played_completely . "<br>";
+            echo "Times Skipped: " . $song->times_skipped . "<br>";
+            echo "Play History: " .count($song->play_history) . "<br><br>";
+        }
+
+
+        echo "<h1>Song Data</h1>";
+        echo "Song Name: " . $this->songs['Let Down']->name . "<br>";
+        echo "Artist Name: " . $this->songs['Let Down']->artist->name . "<br>";
+        echo "Times Played: " . $this->songs['Let Down']->times_played . "<br>";
+        echo "Times Played Completely: " . $this->songs['Let Down']->times_played_completely . "<br>";
+        echo "Times Skipped: " . $this->songs['Let Down']->times_skipped . "<br>";
+        echo "Play History: " . count($this->songs['Let Down']->play_history) . "<br>";
+        */
     }
 
 }
