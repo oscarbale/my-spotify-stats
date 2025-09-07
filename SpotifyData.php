@@ -138,6 +138,7 @@ class SpotifyData
 
         echo "<h1>Album Data</h1>";
         echo "Album Name: " . $this->albums['OK Computer']->album_name . "<br>";
+        echo "Times Played: " . $this->albums['OK Computer']->times_played . "<br>";
         echo "<h2>Album Artist Data:</h2>";
         echo "Artist Name: " . $this->albums['OK Computer']->artist->name . "<br>";
         echo "Songs: " . (count($this->albums['OK Computer']->artist->songs)) . "<br>";
