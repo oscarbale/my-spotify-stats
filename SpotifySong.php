@@ -1,6 +1,7 @@
 <?php
 
 include_once ('SpotifyBaseStats.php');
+include_once ('SpotifyArtist.php');
 
 class SpotifySong extends SpotifyBaseStats
 {
@@ -10,15 +11,15 @@ class SpotifySong extends SpotifyBaseStats
         }
     }
     public string $name;
-    public string $artist;
+    public SpotifyArtist $artist;
 
     /**
      * Constructs the class using the passed parameters
      * @param int $track_id
      * @param string $name
-     * @param string $artist
+     * @param SpotifyArtist $artist
      */
-    public function __construct(int $track_id, string $name, string $artist){
+    public function __construct(int $track_id, string $name, SpotifyArtist $artist){
         $this->track_id = str_replace("spotify:track:", "", $track_id);
         $this->name = $name;
         $this->artist = $artist;
