@@ -42,4 +42,19 @@ class SpotifyArtist extends SpotifyBaseStats
         }
 
     }
+
+    /**
+     * Add SpotifyAlbum to $this->albums, updates the increment counts if already set
+     * @param SpotifyAlbum $album
+     * @return void
+     */
+    public function add_album(SpotifyAlbum $album): void{
+        $album_name = $album->album_name;
+        if (!in_array($album_name, array_keys($this->albums))){
+            $this->albums[$album_name] = $album;
+        }
+        else{
+            $this->albums[$album_name]->update_state($album);
+        }
+    }
 }
