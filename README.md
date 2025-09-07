@@ -8,8 +8,9 @@ You will also need a copy of your listening data from spotify, see information o
 (*Note: This script will only process "Your Extended streaming history" so only include this in `/data`*)
 
 ## How to run 
-You'll need to have PHP setup on your device, then simply clone this repository and place the files from your data
-request in the `/data` directory. 
+You'll need to have PHP setup on your device, then simply clone this repository and create a folder called `data` in 
+the root directory of this repository. Copy across all your spotify data files into this folder (*Only .json files are
+needed*).
 
 Once completed navigate to the root directory of this repository and run the following command
 ```
